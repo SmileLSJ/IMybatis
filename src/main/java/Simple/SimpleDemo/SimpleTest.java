@@ -1,4 +1,4 @@
-package SimpleDemo;
+package Simple.SimpleDemo;
 
 import java.io.IOException;
 

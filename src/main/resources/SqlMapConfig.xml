@@ -17,6 +17,16 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</environments>
 	
 	<mappers>
-		<mapper resource="mapper/simplemapper.xml"/>
+		<!-- 用于测试查询语句，${}和#{} -->
+		<!-- <mapper resource="mapper/simplemapper.xml"/> -->
+		
+		<!-- 其他类型 -->
+		<!-- <mapper resource="mapper/simple_insert_update_delete_mapper.xml"/> -->
+		
+		<!-- namespace与类全路径一致 -->
+		<!-- <mapper resource="mapper/itemmapper.xml"/> -->		
+		
+		<!-- namespace与类全路径一致 -->
+		<package name="packagemapper"/>		
 	</mappers>
 </configuration>
