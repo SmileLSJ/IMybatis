@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 此配置文件用于测试${}和#{} -->
+<mapper namespace="test">
+	<select id="findItemById" parameterType="int" resultType="po.Item">
+		select * from item where id = #{id}
+	</select>
+	
+	<select id="findItemBy$Id" parameterType="int" resultType="po.Item">
+		select * from item where id = ${id}
+	</select>
+	
+	<select id="findItemBy$Id_value" parameterType="int" resultType="po.Item">
+		select * from item where id = ${value}
+	</select>
+	
+	
+	<select id="findItemBy_hello" parameterType="int" resultType="po.Item">
+		select * from item where id = #{hello}
+	</select>
+	
+	<!-- 模糊查询 -->
+	<select id="findItemBy$Name" parameterType="string" resultType="po.Item">
+		select * from item where name like '%${value}%'
+	</select>
+	
+	<select id="findItemByName_hello" parameterType="string" resultType="po.Item">
+		select * from item where name like '%#{name}%'
+	</select>
+</mapper>
