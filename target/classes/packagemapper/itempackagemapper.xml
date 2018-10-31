@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	mapper代理实现
+		1. 全局使用mapper-mapper时，只需要package,路径必须一致
+		因为内部源码的查找过程：mappers->package-name->.class文件->.转换为/找对应的xml文件,所以文件名称和路径必须相同
+		同时namespace是mapperstatement来查找对应的sql语句，所以也为class的路径
+	
+ -->
+<mapper namespace="packagemapper.itempackagemapper">
+	<select id="findItemById" parameterType="int" resultType="po.Item">
+		select * from item where id = #{id}
+	</select>
+</mapper>

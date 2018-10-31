@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 获取主键自增的，需要将主键设置为自增，-->
+<mapper namespace="test">
+	<insert id="InsertPlu" parameterType="po.Plu" >
+		<selectKey  keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+			select LAST_INSERT_ID()
+		</selectKey>
+		insert into plu(name,price) values(#{name},#{price})
+	</insert>
+	
+	<delete id="deletetById" parameterType="int">
+		delete from plu where id = ${value}
+	</delete>
+</mapper>

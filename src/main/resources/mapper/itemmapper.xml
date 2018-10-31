@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+	mapper代理实现
+		1. 全局使用mapper-mapper时，只需要namespace的路径与类的全路径一致即可
+	
+ -->
+<mapper namespace="mapper_.Item_mapper">
+	<select id="findItemById" parameterType="int" resultType="po.Item">
+		select * from item where id = #{id}
+	</select>
+</mapper>
